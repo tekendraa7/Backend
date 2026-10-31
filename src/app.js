@@ -7,8 +7,8 @@ app.use(express.json());
 const notes = []
 
 app.post('/notes', (req, res) => {
-    console.log(req.body);
-    res.send('Note added successfully');
+    notes.push(req.body);
+    res.status(201).send('Note added successfully');
 })
 
 module.exports = app;
